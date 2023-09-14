@@ -1,6 +1,5 @@
 package com.latam.alura.dao;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 
 import com.latam.alura.tienda.modelo.Producto;
