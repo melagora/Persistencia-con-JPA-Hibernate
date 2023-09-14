@@ -18,9 +18,12 @@ public class RegistroDeProducto {
 		celulares.setNombre("LIBROS");
 		
 		//Enviamos los valores a la DB
-		em.getTransaction().commit();
-		em.close();
+		em.flush();
+		em.clear();
 		
+		celulares = em.merge(celulares);
 		celulares.setNombre("SOFTWARE");
+		
+		em.flush();
 	}
 }

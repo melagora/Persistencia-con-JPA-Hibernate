@@ -15,6 +15,11 @@ public class Categoria {
 	private Long id;
 	private String nombre;
 	
+	
+	
+	public Categoria() {
+	}
+
 	public Categoria(String nombre) {
 		this.nombre = nombre;
 	}
