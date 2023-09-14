@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.latam.alura.dao.ProductoDAO;
 import com.latam.alura.tienda.modelo.Producto;
 
 public class RegistroDeProducto {
@@ -18,8 +19,12 @@ public class RegistroDeProducto {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("tienda"); 
 		EntityManager em = factory.createEntityManager();
 		
+		ProductoDAO productoDAO = new ProductoDAO(em);
+		
 		em.getTransaction().begin();
-		em.persist(celular);
+		
+		productoDAO.guardar(celular);
+		
 		//Enviamos los valores a la DB
 		em.getTransaction().commit();
 		em.close();
