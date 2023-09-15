@@ -17,4 +17,9 @@ public class CategoriaDAO {
 	public void actualizar (Categoria categoria) {
 		this.em.merge(categoria);
 	}
+	public void remover (Categoria categoria) {
+		//Con esto nos aseguramos que la entidad se encuentre como manage
+		categoria = this.em.merge(categoria);
+		this.em.remove(categoria);
+	}
 }
