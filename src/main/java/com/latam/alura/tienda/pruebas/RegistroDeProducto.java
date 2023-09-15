@@ -19,8 +19,8 @@ public class RegistroDeProducto {
 		Producto producto = productoDAO.consultaPorId(1L);
 		System.out.println(producto.getNombre());
 		
-		List<Producto> productos =  productoDAO.consultaPorNombreDeCategoria("CELULARES");
-		productos.forEach(prod -> System.out.println(prod.getDescripcion()));
+		BigDecimal precio =  productoDAO.consultarPrecioPorNombreDeProducto("Xiaomi Redmi");
+		System.out.println(precio);
 	}
 
 	private static void registrarProducto() {
